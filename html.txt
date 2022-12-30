@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Animations</title>
+  </head>
+  <body>
+    <div class="sky">
+      <div class="road"></div>
+      <div class="city"></div>
+      <div class="car-wheel">
+        <div class="car">
+          <img src="./assests/car.png" alt="car"  />
+        </div>
+        <div class="wheel">
+          <img src="./assests/wheel.jfif" class="front" alt="front-wheel" />
+          <img src="./assests/wheel.jfif" class="back" alt="back-wheel" />
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sky {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assests/sky.webp);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.road {
+  height: 300px;
+  width: 500%;
+  display: block;
+  background-image: url(./assests/road2.webp);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-repeat: repeat-x;
+  animation: road 2s linear infinite;
+}
+
+.city {
+  height: 385px;
+  width: 500%;
+  display: block;
+  background-image: url(./assests/newcity.png);
+  position: absolute;
+  bottom: 270px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-repeat: repeat-x;
+  animation: city 12s linear infinite;
+}
+
+/* .car-wheel {
+  position: absolute;
+  height: 400px;
+  bottom: 300px;
+  width: 500%;
+} */
+
+.car {
+  position: absolute;
+  transform: translateX(-10%);
+  bottom: 100px;
+  left: 40%;
+  z-index: 2;
+}
+
+.car img {
+  animation: move 2s ease-in-out infinite;
+}
+
+.wheel {
+  position: absolute;
+  transform: translateX(-10%);
+  bottom: 178px;
+  left: 50%;
+  z-index: 2;
+}
+
+.wheel img {
+  height: 75px;
+  width: 95px;
+  animation: rotate 0.5s linear infinite;
+}
+
+.front {
+  position: absolute;
+  left: 40px;
+}
+
+.back {
+  position: absolute;
+  left: -174px;
+}
+
+@keyframes road {
+  100% {
+    transform: translateX(-1300px);
+  }
+}
+
+@keyframes city {
+  100% {
+    transform: translate(-1300px);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  25% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
