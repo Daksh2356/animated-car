@@ -1,2 +1,2 @@
 # animated-car
-Practicing animation using ReactJS
+A simple project to practice animation.
